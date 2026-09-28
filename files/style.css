@@ -5,7 +5,7 @@
     --dot: #7bd62f;
     --pumpkin-skin-1: #f6ad60;
     --pumpkin-skin-2: #f18b36;
-    --pumpkin-skin3: #f38b36;
+    --pumpkin-skin-3: #f38b36;
     --pumpkin-skin-4: #c95927;
     --pumpkin-skin-5: #c95927;
     --pumpkin-skin-6: #97441a;
@@ -107,6 +107,18 @@
     border-right:6px solid transparent;
     border-top:13px solid var(--pumpkin-skin-1);
 
+}
+
+.mouth:after{
+    content:"";
+    position:absolute;
+    top:0;
+    right:24%;
+    width:1px;
+    height:1px;
+    border-left:6px solid transparent;
+    border-right:6px solid transparent;
+    border-top:13px solid var(--pumpkin-skin-2);
 }
 
 .mouth{
