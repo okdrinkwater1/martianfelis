@@ -189,6 +189,15 @@ body{
     flex-direction: column;
 }
 
+footer{
+    text-align: center;
+    padding: 1.5rem; color:var(--muted);
+}
+
+footer p{
+    margin:0;
+}
+
 a{ color: var(--dot); }
 a:hover{ color: var(--text);}
 
@@ -212,7 +221,7 @@ nav a{
 
 .sub_title { color: var(--muted); }
 
-.project_list { padding-left: 1.5rem; }
+.project_list { list-style: none; padding: 0; margin:0; }
 .project_list p { color: var(--muted); margin: 0; }
 
 #gallery {

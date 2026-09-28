@@ -1,22 +1,48 @@
 var canvas =  document.getElementById("stars")
 var ctx= canvas.getContext("2d");
 
-function drawstars() {
-    canvas.width= window.innerWidth;
-    canvas.height = window.innerHeight;
+var stars= [];
+var speed_x=-0.5;
+var speed_y=0.15;
+function makestars(){
+    canvas.width = window.innerWidth;
+    canvas.height= window.innerHeight;
+    stars=[];
 
-    for(var i=0; i<150; i++){
-        var x= Math.random() * canvas.width;
-        var y= Math.random() * canvas.height;
-        var size = Math.random()*2;
-        ctx.fillStyle= Math.random() < 0.2 ? '#7bd62f': 'white';
-        ctx.fillRect(x, y, size, size);
-
+    for(var i =0; i<150; i ++)
+    {
+        stars.push({
+            x: Math.random()*canvas.width,
+            y:Math.random()*canvas.height,
+            size:Math.random()*2,
+            color: Math.random() < 0.2 ? '#7bd62f' : 'white'
+        });
     }
 }
 
-drawstars();
-window.onresize= drawstars;
+function movestars(){
+    ctx.clearRect(0,0, canvas.width, canvas.height);
+
+    stars.forEach(function(star){
+
+        star.x+=speed_x*star.size;
+        star.y+=speed_y *star.size;
+
+        if(star.x <0) star.x= canvas.width;
+        if(star.x> canvas.width) star.x=0;
+        if(star.y<0) star.y= canvas.height;
+        if(star.y> canvas.height) star.y=0;
+
+        ctx.fillStyle= star.color;
+        ctx.fillRect(star.x, star.y, star.size, star.size);
+    });
+
+    requestAnimationFrame(movestars);
+}
+
+makestars();
+movestars();
+window.onresize= makestars;
 
 var pics= [
     { src: 'felis image/cat_smile.jpg', caption: 'felis number1'},
@@ -76,15 +102,15 @@ if(form){
     })
     .then(function(response){
         if(response.ok) {
-            formStatus.textContent = "sent!!";
+            formStatus.textContent = "yay, your note sent";
             form.reset();
         } else {
-            formStatus.textContent ='could not send, try again later';
+            formStatus.textContent ='your note couldnt be sent :(';
 
         }
     })
     .catch(function(){
-        formStatus.textContent = "could not send, check your internet";
+        formStatus.textContent = "your wifi sucks";
     });
 });
 }
