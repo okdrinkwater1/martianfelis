@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>send me a note!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="site_header">
+        <nav>
+            <a href="index.html"></a>
+            <a href="project.html"></a>
+            <a href="gallery.html"></a>
+            <a href="message.html">send me a note!</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>send me a note!</h1>
+
+        <form id="contact_form" action="https://formspree.io/f/meaovono" method="POST">
+            <label for="name">your name</label>
+            <input id="name" name="name" type="text">
+
+            <label for="email">email</label>
+            <input id="email" name="email" type="email">
+
+            <label for="message">send a message.</label>
+            <textarea name="message" id="message"></textarea>
+            
+            <input type="text" name="_gotcha" class="hidden">
+
+            <button type="submit">send</button>
+            <p id="form_status" role="status"></p>
+        </form>
+    </main>
+
+    <script src="main.js"></script>
+    
+</body>
+</html>
