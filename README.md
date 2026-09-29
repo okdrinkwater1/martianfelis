@@ -1,4 +1,4 @@
-![Home Page](screenshots/8.png)
+![Home Page](screenshots/7.png)
 
 # martianfelis
 
@@ -18,6 +18,7 @@ my username is martian felis martian = mars, felis = cat, so i wanted to make so
 - personal pages
 - felis's
 - send me a note (pls)
+- trick or treat(just a spooky effect for now, screenshot is added below)
 - update status
 
 ## stack used
@@ -35,6 +36,7 @@ my username is martian felis martian = mars, felis = cat, so i wanted to make so
 ![image](screenshots/5.png)
 ![image](screenshots/6.png)
 ![image](screenshots/7.png)
+![image](screenshots/8.png)
 ![image](screenshots/9.png)
 ![image](screenshots/10.png)
 ![image](screenshots/11.png)
