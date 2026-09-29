@@ -114,3 +114,28 @@ if(form){
     });
 });
 }
+
+var trick_treat= document.getElementById("trick_treat");
+var spooky_el = document.getElementById("spooky");
+var spooky_timer;
+var less_motion= window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+if(trick_treat){
+    trick_treat.addEventListener("click", function(){
+        var on = document.body.classList.toggle("spooky");
+        trick_treat.textContent= on ? "trick or treat" : "trick or treat";
+
+        clearInterval(spooky_timer);
+        if(on && !less_motion){
+            spooky_timer= setInterval(function(){
+                var brightness= 0.75 + Math.random()*0.5;
+                spooky_el.style.filter="brightness("+ brightness +") saturate(1.8)";
+            }, 180);
+
+        }else if(on){
+            spooky_el.style.filter ="saturate(1.8)";
+        } else {
+            spooky_el.style.filter="";
+        }
+    });
+}

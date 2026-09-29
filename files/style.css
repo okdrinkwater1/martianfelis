@@ -224,6 +224,19 @@ nav a{
 .project_list { list-style: none; padding: 0; margin:0; }
 .project_list p { color: var(--muted); margin: 0; }
 
+.box {
+    border: 1px solid var(--dot);
+    padding: 1rem 1.5rem;
+    max-width: 24rem;
+    margin: 2rem auto 0;
+    text-align: left;
+}
+
+.box h2{margin: 0 0 0.25rem; text-align: center; }
+.box .sub_title{ text-align: center; margin-top: 0; }
+.box hr{ border:0; border-top: 1px solid var(--dot); margin: 1rem 0;}
+.box p { margin: 0.5rem 0;}
+
 #gallery {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
@@ -251,3 +264,35 @@ nav a{
 button { font: inherit; }
 #contact_form button { margin-top: 1rem; }
 .hidden {display: none;}
+
+#spooky {
+    display: flex;
+    flex-direction:column;
+    flex:1;
+    min-height:0;
+}
+
+#trick_treat {
+    background:none;
+    border: 1px solid var(--dot);
+    color: var(--dot);
+    font: inherit;
+    padding: 0.3rem 0.8rem;
+    cursor: pointer;
+    margin-top: 0.5rem;
+}
+
+#trick_treat:hover {
+    background: var(--dot);
+    color: #000;
+
+}
+
+body.spooky::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:3;
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0)30%, rgba(15,90,10,0.85)100%);
+}
